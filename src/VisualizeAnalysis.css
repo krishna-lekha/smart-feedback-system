@@ -1,0 +1,104 @@
+/* VisualizeAnalysis.css */
+
+.analysis-container {
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #2c3e50;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  min-width: 180px;
+}
+
+.chart-container {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 30px;
+  width: 90%;
+  max-width: 650px;
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion-heading {
+  text-align: center;
+  font-size: 22px;
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.suggestion-table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.suggestion-table th,
+.suggestion-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-size: 15px;
+}
+
+.suggestion-table th {
+  background-color: #f0f4f8;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.suggestion-table tr:hover {
+  background-color: #f9fcff;
+}
+
+.no-data {
+  text-align: center;
+  margin-top: 40px;
+  color: #888;
+  font-size: 18px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}

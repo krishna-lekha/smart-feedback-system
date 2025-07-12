@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background: url('images/bg2.png') no-repeat center center fixed;
+  background-size: cover;
+}
+.home,
+.user-dashboard,
+.admin-dashboard,
+.main,
+.container,
+.App {
+  background: transparent !important;
+}
+
+.navbar{
+  background: white;
+}
+.navbar-brand {
+  color: #1a73e8; /* Dark color for brand name */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar Links as Buttons */
+.nav-links {
+  display: flex;
+  gap: 2rem; 
+  justify-content: center;  
+  width: 100%; 
+  margin-top: 50px;
+  margin-bottom: 20px;
+  
+}
+
+.nav-links a {
+  color: #ffffff; /* White color for text */
+  text-decoration: none;
+  font-size: 1.2rem; /* Decreased font size for better balance */
+  font-weight: bold;
+  padding: 1rem 2rem; /* Padding for a larger button effect */
+  border-radius: 30px; /* Rounded corners for the button look */
+  background-color: #1a73e8; 
+  border: 2px solid #1a73e8; 
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for buttons */
+.nav-links a:hover {
+  background-color: #ffffff; /* White background on hover */
+  color: #1a73e8; /* Maroon text on hover */
+  border: 2px solid #1a73e8; /* Maroon border on hover */
+  transform: translateY(-3px); /* Slight lift effect on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover for depth */
+}
+
+/* Active button style (optional) */
+.nav-links a:active {
+  background-color: rgba(255, 255, 255, 0.8); /* Lighter white background when clicked */
+  transform: translateY(0); /* Reset lift effect on click */
+}
+
+/* Add more specific styling if needed for active states or additional navbar elements */
+
+
+/* Common Container Styles for Login/Signup Pages */
+.admin-login-container,
+.admin-signup-container,
+.user-login-container,
+.user-signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.admin-login-container::before,
+.admin-signup-container::before,
+.user-login-container::before,
+.user-signup-container::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  background: rgba(253, 252, 252, 0.4);
+  backdrop-filter: blur(1px); /* Decreased blur length and width */
+}
+
+/* Common Box Styles for Login/Signup Pages */
+.admin-login-box,
+.admin-signup-box,
+.user-login-box,
+.user-signup-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  transform: translateY(-20px);
+  animation: float 6s ease-in-out infinite;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(-20px); }
+  50% { transform: translateY(-30px); }
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 20px rgba(128, 0, 0, 0.2);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.button.submit-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #1a73e8 !important; /* Maroon color with !important */
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect for the login button */
+button.submit-button:hover {
+  background-color: #1a73e8 !important; /* Darker maroon color on hover */
+  transform: translateY(-2px);
+  /* box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3); */
+}
+
+/* Active button style (on click) */
+button.submit-button:active {
+  transform: translateY(0);
+}
+/* Home Styles */
+/* .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  /* background-image: url('./images/logo.jpg'); Ensure the correct path */
+  /* background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */ 
+
+/* Dark overlay for better text visibility */
+.home::before {
+  display:none;
+}
+
+/* Text styling */
+.home h1 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Add subtle shadow for readability */
+  letter-spacing: 1.5px; /* Slight letter spacing for a clean look */
+  z-index: 1; /* Keep text above the overlay */
+  text-align: center; /* Center the text */
+}
+/* Global Watermark Style */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px; /* Adjust width as needed */
+  height: 90px; /* Adjust height as needed */
+  /* background-image: url('./images/watermark.jpg'); Ensure this path is correct */
+  background-repeat: no-repeat;
+  background-size: contain; /* Keep the original aspect ratio */
+  background: fixed;
+  opacity: 1; /* Subtle effect */
+  pointer-events: none; /* Doesn't interfere with page interactions */
+  z-index: 9999; /* Ensures it's above other elements */
+}
+
+.logout-button {
+  padding: 5px 10px; /* Reduced padding for a smaller button */
+  background-color: #1a73e8; /* Dark red background */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Slightly smaller border radius */
+  font-size: 12px; /* Decreased font size for a smaller button */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.logout-button:hover {
+  background-color: #1a73e8; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.logout-button:active {
+  transform: translateY(0); /* Reset lift effect on click */
+}
+
+/* Add this new class for common button styles */
+.common-button {
+  width: 100%; /* Ensure full width */
+  padding: 15px; /* Same padding as submit button */
+  background-color: #1a73e8; /* Maroon color */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 15px; /* Rounded corners */
+  font-size: 1.1rem; /* Same font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the common button */
+.common-button:hover {
+  background-color: #1a73e8; /* Darker maroon on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.common-button:active {
+  transform: translateY(0); /* Reset lift effect on click */
+}

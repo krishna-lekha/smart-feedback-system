@@ -1,0 +1,113 @@
+/* Container Styling */
+.view-status-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  min-height: 100vh;
+}
+
+/* Heading Box Styling */
+.heading-bar {
+  display: flex;
+  align-items: center;         /* 🔹 Vertically align button + heading */
+  gap: 50px;                   /* 🔹 Space between button and heading */
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+.status-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a73e8;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Table Styling */
+.status-table {
+  width: 95%;
+  max-width: 1100px;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.status-table th {
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #1a73e8;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-table td {
+  padding: 12px 16px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+.status-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.status-table tr:hover {
+  background-color: #eef4fc;
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
+
+/* No Status Message */
+.no-status-message {
+  font-size: 1.2rem;
+  color: #999;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* Back Button Styling */
+.back-button {
+  display: flex;                /* 🔹 Make content horizontal */
+  align-items:left;         /* 🔹 Vertically center arrow + text */
+  gap: 8px;                    /* 🔹 Space between arrow and text */
+  padding: 10px 20px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;         /* 🔹 Prevent line break */
+}
+
+.back-button:hover {
+  background-color: #1557b0;
+  transform: scale(1.05);
+}
+
+/* Add Complaint Button Styling */
+.add-complaint-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.add-complaint-button:hover {
+  background-color: #1557b0;
+  transform: scale(1.05);
+}

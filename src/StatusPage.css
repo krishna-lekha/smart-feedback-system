@@ -1,0 +1,134 @@
+/* Page container */
+.StatusPage {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 50px auto;
+  padding: 20px;
+  top: 50px;
+  max-width: 1300px;;
+  background-color:white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+/* Back button styling */
+.back-button {
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  color: #1a73e8;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid #1a73e8;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #1a73e8;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Heading */
+.status-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* Glow animation */
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 10px rgba(30, 136, 229, 0.6);
+  }
+  to {
+    text-shadow: 2px 2px 20px rgba(79, 195, 247, 0.8);
+  }
+}
+
+/* Table styling */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header */
+table th {
+  background: linear-gradient(to right, #1a73e8, #4fc3f7); /* Blue gradient */
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  font-weight: bold;
+  padding: 12px 16px;
+}
+
+/* Table body cells */
+table td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  color: #555;
+  vertical-align: top;
+}
+
+/* Row colors */
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect */
+table tr:hover {
+  background: #e3f2fd;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Select dropdown */
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 4px rgba(30, 136, 229, 0.5);
+}
+
+/* Button */
+button {
+  padding: 10px 20px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1a73e8;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}

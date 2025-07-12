@@ -1,0 +1,208 @@
+/* index.css */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .homepage {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  }
+  
+  /* Header styles */
+  .header {
+    background-color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a73e8;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-links button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links button:hover {
+    color: #1a73e8;
+  }
+  
+  .signup-btn {
+    background-color: #1a73e8 !important;
+    color: white !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease !important;
+  }
+  
+  .signup-btn:hover {
+    background-color: #1557b0 !important;
+  }
+  
+  
+  .login-btn {
+    background-color: #1a73e8 !important;
+    color: white !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease !important;
+  }
+  
+  .login-btn:hover {
+    background-color: #1557b0 !important;
+  }
+  
+  /* Homepage.css */
+.dropdown-menu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1000;
+  margin-top: 5px; /* Add some space between the button and dropdown */
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+  /* Main content styles */
+  .main-content {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    min-height: calc(100vh - 80px);
+  }
+  
+  .image-section {
+    flex: 1;
+  }
+  
+  .image-section img {
+    width: 100%;
+    height: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .image-section img:hover {
+    transform: scale(1.02);
+  }
+  
+  .text-section {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .text-section h1 {
+    font-size: 2rem;
+    line-height: 1.5;
+    color: black;
+    margin-bottom: 1.5rem;
+  }
+  
+  .text-section p {
+    font-size: 1.1rem;
+    color: black;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .get-started-btn {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #1557b0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  /* Previous CSS styles remain the same, adding new styles for features list */
+  
+  .features-list {
+    margin: 1.5rem 0;
+  }
+  
+  .features-list p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  .main-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 2rem;
+    }
+  
+    .nav-links {
+      gap: 1rem;
+    }
+  
+    .text-section {
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    .text-section h1 {
+      font-size: 2rem;
+    }
+  
+    .header {
+      padding: 1rem;
+    }
+  }
