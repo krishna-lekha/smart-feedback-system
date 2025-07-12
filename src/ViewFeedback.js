@@ -1,318 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import "./ViewFeedback.css";
-// import { useNavigate } from "react-router-dom";
-
-// const ViewFeedback = () => {
-//   const [feedbacks, setFeedbacks] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     const fetchFeedbacks = async () => {
-//       try {
-//         const response = await fetch("http://localhost:5000/api/feedback");
-//         if (!response.ok) {
-//           throw new Error("Failed to fetch feedbacks");
-//         }
-//         const data = await response.json();
-//         setFeedbacks(data);
-//       } catch (error) {
-//         console.error("Error fetching feedback:", error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-//     fetchFeedbacks();
-//   }, []);
-
-//   if (loading) {
-//     return <p>Loading feedback...</p>;
-//   }
-
-//   return (
-//     <div className="view-feedback-container">
-//       <button className="back-button" onClick={() => navigate(-1)}>
-//         ← Back
-//       </button>
-
-//       <h1>User Feedback Overview</h1>
-//       {feedbacks.length > 0 ? (
-//         <table className="feedback-table">
-//           <thead>
-//             <tr>
-//               <th>Description</th>
-//               <th>Screenshot</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {feedbacks.map((feedback) => (
-//               <tr key={feedback._id}>
-//                 <td>{feedback.description || "No description provided"}</td>
-//                 <td>
-//                   {feedback.imageUrl ? (
-//                     <img
-//                       src={feedback.imageUrl}
-//                       alt="User Screenshot"
-//                       className="feedback-image"
-//                       style={{ width: "120px", height: "auto", borderRadius: "6px" }}
-//                     />
-//                   ) : (
-//                     "No image"
-//                   )}
-//                 </td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       ) : (
-//         <p className="no-feedback-message">No feedback available.</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ViewFeedback;
-
-// import React, { useEffect, useState } from "react";
-// import "./ViewFeedback.css";
-// import { useNavigate } from "react-router-dom";
-
-// const ViewFeedback = () => {
-//   const [feedbacks, setFeedbacks] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     const fetchFeedbacks = async () => {
-//       try {
-//         const response = await fetch("http://localhost:5000/api/feedback");
-//         if (!response.ok) {
-//           throw new Error("Failed to fetch feedbacks");
-//         }
-//         const data = await response.json();
-//         setFeedbacks(data);
-//       } catch (error) {
-//         console.error("Error fetching feedback:", error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-//     fetchFeedbacks();
-//   }, []);
-
-//   if (loading) {
-//     return <p>Loading feedback...</p>;
-//   }
-
-//   return (
-//     <div className="view-feedback-container">
-//       <button className="back-button" onClick={() => navigate(-1)}>
-//         ← Back
-//       </button>
-
-//       <h1>User Feedback Overview</h1>
-
-//       {feedbacks.length > 0 ? (
-//         <table className="feedback-table">
-//           <thead>
-//             <tr>
-//               <th>Name</th>
-//               <th>Category</th>
-//               <th>Description</th>
-//               <th>Screenshot</th>
-//               <th>Source</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {feedbacks.map((feedback) => (
-//               <tr key={feedback._id}>
-//                 {/* <td>{feedback.name || "N/A"}</td> */}
-//                 {/* <td>{feedback.source === "web" ? feedback.name || "Unknown" : feedback.accountId || "Anonymous"}</td> */}
-//                 <td title={feedback.accountId || ""}>
-//                     {feedback.name || "Anonymous"}
-//                 </td>
-//                 <td>{feedback.category || "N/A"}</td>
-//                 <td>{feedback.description || "No description"}</td>
-//                 <td>
-//                   {feedback.imageUrl ? (
-//                     <img
-//                       src={feedback.imageUrl}
-//                       alt="User Screenshot"
-//                       className="feedback-image"
-//                       style={{ width: "120px", height: "auto", borderRadius: "6px" }}
-//                     />
-//                   ) : (
-//                     "No image"
-//                   )}
-//                 </td>
-//                 <td>{feedback.source || "web"}</td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       ) : (
-//         <p className="no-feedback-message">No feedback available.</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ViewFeedback;
-
-// import React, { useEffect, useState } from "react";
-// import "./ViewFeedback.css";
-// import { useNavigate } from "react-router-dom";
-
-// const ViewFeedback = () => {
-//   const [feedbacks, setFeedbacks] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [aiResponse, setAiResponse] = useState("");
-//   const [selectedFeedbackId, setSelectedFeedbackId] = useState(null);
-//   const [generating, setGenerating] = useState(false);
-
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     const fetchFeedbacks = async () => {
-//       try {
-//         const response = await fetch("http://localhost:5000/api/feedback");
-//         if (!response.ok) throw new Error("Failed to fetch feedbacks");
-//         const data = await response.json();
-//         setFeedbacks(data);
-//       } catch (error) {
-//         console.error("Error fetching feedback:", error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-//     fetchFeedbacks();
-//   }, []);
-
-//   const handleGenerateResponse = async (feedback) => {
-//     setGenerating(true);
-//     setSelectedFeedbackId(feedback._id);
-//     setAiResponse("");
-
-//   try {
-//     // 1️⃣ Generate AI response
-//     const response = await fetch("http://localhost:5000/api/generate-response", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({
-//     feedbackId: feedback._id, // use ID to look up email
-//     feedbackText: feedback.description,
-//     category: feedback.category,
-//   }),
-// });
-//   const data = await response.json();
-
-// if (data.success) {
-//  const generatedText = data.response;
-
-//   // ✅ Update state to reflect response
-//   setFeedbacks((prev) =>
-//     prev.map((f) =>
-//       f._id === feedback._id
-//         ? {
-//             ...f,
-//             aiResponse: data.response,
-//             aiResponseSentAt: new Date().toISOString(),
-//           }
-//         : f
-//     )
-//   );
-//       setAiResponse(generatedText); // Show to admin
-//       alert("✅ Response generated and emailed to user.");
-//     } else {
-//       setAiResponse("Failed to generate response.");
-//     }
-//   } catch (error) {
-//     console.error("Error:", error);
-//     setAiResponse("❌ Error occurred during generation or sending.");
-//   } finally {
-//     setGenerating(false);
-//   }
-// };
-
-//   if (loading) return <p>Loading feedback...</p>;
-
-//   return (
-//     <div className="view-feedback-container">
-//       <button className="back-button" onClick={() => navigate(-1)}>← Back</button>
-//       <h1>User Feedback Overview</h1>
-
-//       {feedbacks.length > 0 ? (
-//         <table className="feedback-table">
-//           <thead>
-//             <tr>
-//               <th>Name</th>
-//               <th>Category</th>
-//               <th>Description</th>
-//               <th>Screenshot</th>
-//               <th>Source</th>
-//               <th>LLM Reply</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {feedbacks.map((feedback) => (
-//               <tr key={feedback._id}>
-//                 <td>{feedback.name || "Anonymous"}</td>
-//                 <td>{feedback.category || "N/A"}</td>
-//                 <td>{feedback.description || "No description"}</td>
-//                 <td>
-//                   {feedback.imageUrl ? (
-//                     <img src={feedback.imageUrl} alt="Screenshot" style={{ width: "100px", borderRadius: "6px" }} />
-//                   ) : "No image"}
-//                 </td>
-//                 <td>{feedback.source || "web"}</td>
-//                 <td>
-//                   {/* <button
-//                     className="generate-button"
-//                     onClick={() => handleGenerateResponse(feedback)}
-//                     disabled={generating && selectedFeedbackId === feedback._id}
-//                   >
-//                     {generating && selectedFeedbackId === feedback._id ? "Generating..." : "Generate Response"}
-//                   </button> */}
-//                   <button
-//                     className="generate-button"
-//                     onClick={() => handleGenerateResponse(feedback)}
-//                     disabled={generating || feedback.aiResponse}
-//                   >
-//                     {feedback.aiResponse
-//                       ? "Response Sent"
-//                       : generating && selectedFeedbackId === feedback._id
-//                       ? "Generating..."
-//                       : "Generate Response"}
-//                   </button>
-//                   {/* {selectedFeedbackId === feedback._id && aiResponse && (
-//                     <div className="ai-response-box">
-//                       <strong>Response:</strong>
-//                       <p style={{ whiteSpace: "pre-wrap" }}>{aiResponse}</p>
-//                     </div>
-//                   )} */}
-//                   {feedback.aiResponse && (
-//                     <div className="ai-response-box">
-//                       <strong>Response:</strong>
-//                       <p>{feedback.aiResponse}</p>
-//                       {feedback.aiResponseSentAt && (
-//                         <p className="sent-time">🕒 Sent on: {new Date(feedback.aiResponseSentAt).toLocaleString()}</p>
-//                       )}
-//                     </div>
-//                   )}
-//                 </td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       ) : (
-//         <p>No feedback available.</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ViewFeedback;
-
 import React, { useEffect, useState } from "react";
 import "./ViewFeedback.css";
 import { useNavigate } from "react-router-dom";
@@ -597,7 +282,7 @@ const ViewFeedback = () => {
                   )}
                 </td>
 
-                {!feedback.aiResponse && (
+                
                   <td>
                     <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
                       <div>   
@@ -642,21 +327,29 @@ const ViewFeedback = () => {
                         </select>
                       </div>
                     </div>
-                  </td>
-                )}
-                {feedback.aiResponse && <td>✅ Response Sent</td>}
+                  
+              
+                </td>
+                
+                {/* {feedback.aiResponse && <td>✅ Response Sent</td>} */}
 
                 <td style={{width: "250px"}}>
                   <button
                     className="generate-button"
                     onClick={() => handleGenerateResponse(feedback)}
-                    disabled={generating || feedback.aiResponse}
+                    //disabled={generating || feedback.aiResponse}
+                    disabled={generating && selectedFeedbackId === feedback._id}
                   >
-                    {feedback.aiResponse
+                    {/* {feedback.aiResponse
                       ? "Response Sent"
                       : generating && selectedFeedbackId === feedback._id
                       ? "Generating..."
-                      : "Generate Response"}
+                      : "Generate Response"} */}
+                      {generating && selectedFeedbackId === feedback._id
+                        ? "Generating..."
+                        : feedback.aiResponse
+                        ? "Regenerate Response"
+                        : "Generate Response"}
                   </button>
 
                   {feedback.aiResponse && (
@@ -665,7 +358,7 @@ const ViewFeedback = () => {
                       <p>{feedback.aiResponse}</p>
                       {feedback.aiResponseSentAt && (
                         <p className="sent-time">
-                          🕒 Sent on: {new Date(feedback.aiResponseSentAt).toLocaleString()}
+                          🕒 Generated on: {new Date(feedback.aiResponseSentAt).toLocaleString()}
                         </p>
                       )}               
                     </div>

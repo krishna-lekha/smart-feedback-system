@@ -8,11 +8,12 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-
+import { useNavigate } from "react-router-dom";
 const COLORS = ["#8BC34A", "#F44336", "#FFEB3B"]; // Positive, Negative, Neutral
 const CATEGORIES = ["All", "Credit Card", "Loan", "Transaction", "Mobile Banking", "Other"];
 
 const VisualizeAnalysis = () => {
+  const navigate = useNavigate();
   const [feedbacks, setFeedbacks] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
@@ -103,13 +104,21 @@ const VisualizeAnalysis = () => {
     <div className="p-6 space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">📊 Feedback Sentiment Analysis</h2>
+        <button
+          onClick={() => navigate(-1)}
+          style={{
+            backgroundColor: "#1a73e8",
+            color: "white",
+            border: "none",
+            padding: "8px 16px",
+            borderRadius: "6px",
+            marginBottom: "16px",
+            cursor: "pointer",
+          }}
+        >
+          ← Back
+        </button>
         <div className="flex gap-3" style= {{gap: "10px"}}>
-          {/* <button
-            onClick={() => window.open('http://localhost:5000/api/export/csv')}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-          >
-            Download CSV
-          </button> */}
           <button
             onClick={async () => {
               try {
